@@ -1,0 +1,131 @@
+package com.bajaj.apitest.dto;
+
+import com.fasterxml.jackson.annotation.JsonProperty;
+import java.util.List;
+
+public class BfhlResponse {
+    private boolean is_success;
+    private String user_id;
+    private String email;
+    private String roll_number;
+    private List<String> even_numbers;
+    private List<String> odd_numbers;
+    private List<String> alphabets;
+    private List<String> special_characters;
+    private String sum;
+    private String concat_string;
+
+    public BfhlResponse() {
+    }
+
+    public BfhlResponse(boolean is_success, String user_id, String email, String roll_number,
+                        List<String> even_numbers, List<String> odd_numbers, List<String> alphabets,
+                        List<String> special_characters, String sum, String concat_string) {
+        this.is_success = is_success;
+        this.user_id = user_id;
+        this.email = email;
+        this.roll_number = roll_number;
+        this.even_numbers = even_numbers;
+        this.odd_numbers = odd_numbers;
+        this.alphabets = alphabets;
+        this.special_characters = special_characters;
+        this.sum = sum;
+        this.concat_string = concat_string;
+    }
+
+    @JsonProperty("is_success")
+    public boolean isIs_success() {
+        return is_success;
+    }
+
+    public void setIs_success(boolean is_success) {
+        this.is_success = is_success;
+    }
+
+    @JsonProperty("user_id")
+    public String getUser_id() {
+        return user_id;
+    }
+
+    public void setUser_id(String user_id) {
+        this.user_id = user_id;
+    }
+
+    @JsonProperty("email")
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    @JsonProperty("roll_number")
+    public String getRoll_number() {
+        return roll_number;
+    }
+
+    public void setRoll_number(String roll_number) {
+        this.roll_number = roll_number;
+    }
+
+    @JsonProperty("even_numbers")
+    public List<String> getEven_numbers() {
+        return even_numbers;
+    }
+
+    public void setEven_numbers(List<String> even_numbers) {
+        this.even_numbers = even_numbers;
+    }
+
+    @JsonProperty("odd_numbers")
+    public List<String> getOdd_numbers() {
+        return odd_numbers;
+    }
+
+    public void setOdd_numbers(List<String> odd_numbers) {
+        this.odd_numbers = odd_numbers;
+    }
+
+    @JsonProperty("alphabets")
+    public List<String> getAlphabets() {
+        return alphabets;
+    }
+
+    public void setAlphabets(List<String> alphabets) {
+        this.alphabets = alphabets;
+    }
+
+    @JsonProperty("special_characters")
+    public List<String> getSpecial_characters() {
+        return special_characters;
+    }
+
+    public void setSpecial_characters(List<String> special_characters) {
+        this.special_characters = special_characters;
+    }
+
+    // Proactive support for the typo in the hiring document's Example B
+    @JsonProperty("sepcial_characters")
+    public List<String> getSepcial_characters() {
+        return special_characters;
+    }
+
+    @JsonProperty("sum")
+    public String getSum() {
+        return sum;
+    }
+
+    public void setSum(String sum) {
+        this.sum = sum;
+    }
+
+    @JsonProperty("concat_string")
+    public String getConcat_string() {
+        return concat_string;
+    }
+
+    public void setConcat_string(String concat_string) {
+        this.concat_string = concat_string;
+    }
+}
