@@ -1,0 +1,100 @@
+{
+	"info": {
+		"_postman_id": "4b68e9cb-fa50-4824-a28a-79a25039e1ff",
+		"name": "Bajaj SDE Hiring API Test",
+		"description": "This is the Postman collection containing requests for Example A, Example B, and Example C as defined in the Bajaj SDE API Hiring sheet.",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Example A Request",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"data\": [\"a\", \"1\", \"334\", \"4\", \"R\", \"$\"]\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/bfhl",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"bfhl"
+					]
+				},
+				"description": "POST request matching Example A in the requirements sheet.\n\nExpected Response:\n- odd_numbers: [\"1\"]\n- even_numbers: [\"334\", \"4\"]\n- alphabets: [\"A\", \"R\"]\n- special_characters: [\"$\"]\n- sum: \"339\"\n- concat_string: \"Ra\""
+			},
+			"response": []
+		},
+		{
+			"name": "Example B Request",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"data\": [\"2\", \"a\", \"y\", \"4\", \"&\", \"-\", \"*\", \"5\", \"92\", \"b\"]\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/bfhl",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"bfhl"
+					]
+				},
+				"description": "POST request matching Example B in the requirements sheet.\n\nExpected Response:\n- odd_numbers: [\"5\"]\n- even_numbers: [\"2\", \"4\", \"92\"]\n- alphabets: [\"A\", \"Y\", \"B\"]\n- special_characters/sepcial_characters: [\"&\", \"-\", \"*\"]\n- sum: \"103\"\n- concat_string: \"ByA\""
+			},
+			"response": []
+		},
+		{
+			"name": "Example C Request",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"data\": [\"A\", \"ABCD\", \"DOE\"]\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/bfhl",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"bfhl"
+					]
+				},
+				"description": "POST request matching Example C in the requirements sheet.\n\nExpected Response:\n- odd_numbers: []\n- even_numbers: []\n- alphabets: [\"A\", \"ABCD\", \"DOE\"]\n- special_characters: []\n- sum: \"0\"\n- concat_string: \"EoDdCbAa\""
+			},
+			"response": []
+		}
+	]
+}
