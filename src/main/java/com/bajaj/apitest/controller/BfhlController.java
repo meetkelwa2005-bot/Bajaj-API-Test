@@ -21,6 +21,13 @@ public class BfhlController {
         this.bfhlService = bfhlService;
     }
 
+    @GetMapping
+    public ResponseEntity<java.util.Map<String, Object>> getOperationCode() {
+        java.util.Map<String, Object> response = new java.util.HashMap<>();
+        response.put("operation_code", 1);
+        return ResponseEntity.ok(response);
+    }
+
     @PostMapping
     public ResponseEntity<BfhlResponse> processPayload(@RequestBody(required = false) BfhlRequest request) {
         try {

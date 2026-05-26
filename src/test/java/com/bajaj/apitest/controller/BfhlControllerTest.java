@@ -16,7 +16,7 @@ import static org.springframework.test.web.servlet.request.MockMvcRequestBuilder
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.jsonPath;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
-@WebMvcTest(BfhlController.class)
+@WebMvcTest({BfhlController.class, HealthController.class})
 @Import(BfhlServiceImpl.class)
 public class BfhlControllerTest {
 
@@ -25,6 +25,21 @@ public class BfhlControllerTest {
 
     @Autowired
     private ObjectMapper objectMapper;
+
+    @Test
+    public void testGetBfhlEndpoint() throws Exception {
+        mockMvc.perform(org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get("/bfhl"))
+                .andExpect(status().isOk())
+                .andExpect(jsonPath("$.operation_code").value(1));
+    }
+
+    @Test
+    public void testGetHealthEndpoint() throws Exception {
+        mockMvc.perform(org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get("/health"))
+                .andExpect(status().isOk())
+                .andExpect(jsonPath("$.status").value("UP"))
+                .andExpect(jsonPath("$.is_success").value(true));
+    }
 
     @Test
     public void testPostBfhlEndpoint() throws Exception {
